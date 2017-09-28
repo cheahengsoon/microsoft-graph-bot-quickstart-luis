@@ -22,13 +22,26 @@ rm -rf .git  # OS/X (bash)
 rd .git /S/Q # windows
 ```
 
-3. Open the project in Visual Studio, allow the NuGet packages to restore, and run the project.
+3. Open the project in Visual Studio and allow the NuGet packages to restore.
 
-4. Launch the Bot Framework Emulator (available [HERE](https://docs.botframework.com/en-us/tools/bot-framework-emulator/)).
+4. Create a Microsoft Cognitive Services key for LUIS from the [Azure Portal](https://portal.azure.com). For more information on how to do this, see [Creating Subscription Keys Via Azure](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/azureibizasubscription).
 
-5. Enter the messaging endpoint for the bot project (likely http://localhost:3980/api/messages but could be a different port) and the click the "Connect" button (leave the Microsoft App ID and Microsoft App Password blank as these are for published bots).
+5. Open the **Dialogs/RootDialog.cs** file and update the LuisModel settings with your subscription key.
 
-6. Type anything to the bot and follow the prompts.
+    <pre>
+    namespace MsftGraphBotQuickStart.Dialogs
+    {
+        [LuisModel("c138dfee-d228-416f-953e-5307c2b236ac", "COGNITIVE_SERVICES_SUBSCRIPTION_KEY_HERE")]
+        [Serializable]
+    </pre>
+
+6. Build and run the project.
+
+7. Launch the Bot Framework Emulator (available [HERE](https://docs.botframework.com/en-us/tools/bot-framework-emulator/)).
+
+8. Enter the messaging endpoint for the bot project (likely http://localhost:3980/api/messages but could be a different port) and the click the "Connect" button (leave the Microsoft App ID and Microsoft App Password blank as these are for published bots).
+
+9. Type anything to the bot and follow the prompts.
 
 ![Animated gif of Quickstart project run in the Bot Emulator](https://github.com/richdizz/microsoft-graph-bot-quickstart-luis/blob/master/Images/MsftGraphBotQuickStartLUIS.gif?raw=true)
 

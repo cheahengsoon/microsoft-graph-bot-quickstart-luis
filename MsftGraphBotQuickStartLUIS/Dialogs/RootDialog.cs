@@ -16,7 +16,7 @@ using Newtonsoft.Json.Linq;
 
 namespace MsftGraphBotQuickStart.Dialogs
 {
-    [LuisModel("c138dfee-d228-416f-953e-5307c2b236ac", "25670274c6ad4180a3e4be0e8f4d91d5")]
+    [LuisModel("c138dfee-d228-416f-953e-5307c2b236ac", "COGNITIVE_SERVICES_SUBSCRIPTION_KEY_HERE")]
     [Serializable]
     public class RootDialog : LuisDialog<IMessageActivity>
     {
